@@ -1,9 +1,10 @@
-import './index.css'
+import Navbar from "./shared/Navbar"
+
 function App() {
 
   return (
-    <div className="bg-red-500">
-      <h1 className="color-red-500">MEDITATION WAVE</h1>
+    <div className="bg-slate-200 min-h-screen border-4 border-red-500">
+      <Navbar/>
     </div>
   )
 }

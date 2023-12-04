@@ -7,46 +7,32 @@ const Navbar: React.FC = () => {
 
   const [menu, setMenu] = useState<boolean>(false);
 
-  const onMenu = () => {
-    setMenu(!menu)
-    const containerLink = document.querySelector(
-      ".container-link"
-    ) as HTMLDivElement;
-    if (menu) {
-      containerLink.classList.add("absolute");
-      setMenu(false);
-    } else {
-      containerLink.classList.remove("absolute");
-      setMenu(true);
-    }
-  }
   return (
     <>
-      <nav className="flex items-center w-[100%] bg-slate-900 border-2 border-green-300">
-        <a className="flex flex-col items-center gap-2 border-2 border-white px-4 py-2">
+      <nav className="flex  justify-around items-center w-[100%] bg-slate-900 relative">
+        <a className="flex flex-col items-center gap-2 px-4 py-2">
           <img
             src={logo}
             alt="logo"
-            className="w-24 2xl:w-32 h-18 rounded-xl border-2 border-red-500"
+            className="w-24 2xl:w-32 h-18 rounded-xl"
           />
         </a>
-        <div className="container-link flex flex-col 2xl:flex-row w-[100%] items-center gap-10 2xl:justify-around my-6 absolute top-[-100%] sm:relative sm:top-[100%] ">
-          {/* /div> gap-10 2xl:gap-40 my-6 2xl:font-medium absolute top-[-100%] 2xl:relative 2xl:top-[100%]"> */}
-          <a className="text-xl sm:text-2xl text-white relative">Home</a>
-          <a className="text-xl sm:text-2xl text-white relative">Start Meditation</a>
-          <a className="text-xl sm:text-2xl text-white relative">Contact</a>
+        <div className={`flex flex-col md:flex-row items-center md:justify-around gap-10 bg-slate-900 w-full py-8 absolute md:relative ${menu ? "top-[90%]" : "bottom-[100%]"}`}>
+          <a className="text-xl font-bold tracking-wider md:text-2xl text-white cursor-pointer ">Home</a>
+          <a className="text-xl font-bold tracking-wider md:text-2xl text-white cursor-pointer">Start</a>
+          <a className="text-xl font-bold tracking-wider md:text-2xl text-white cursor-pointer">Contact</a>
         </div>
         {menu ? (
           <AiOutlineClose
-            className="2xl:hidden text-4xl absolute left-[85%] top-10"
+            className="md:hidden text-5xl"
             color="white"
-            onClick={() => onMenu()}
+            onClick={() => setMenu(!menu)}
           />
         ) : (
           <RxHamburgerMenu
-            className="2xl:hidden text-4xl absolute left-[85%] top-10"
+            className="md:hidden text-5xl"
             color="white"
-            onClick={() => onMenu()}
+            onClick={() => setMenu(!menu)}
           />
         )}
       </nav>

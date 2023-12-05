@@ -19,10 +19,10 @@ const globalSlice = createSlice({
         changeLanguage: (state, action: PayloadAction<Language>) => {
             state.language = action.payload
         },
-        changeDarkMode: (state) => {
-            state.darkMode = !state.darkMode
+        changeDarkMode: (state, action: PayloadAction<boolean>) => {
+            state.darkMode = action.payload
         }   
     }
 })
 
-export default globalSlice.reducer
+export default globalSlice

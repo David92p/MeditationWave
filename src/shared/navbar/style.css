@@ -5,7 +5,7 @@
 /* NAVBAR */
 
 .container-nav {
-  @apply bg-amber-900 pb-2;
+  @apply bg-yellow-950 pb-2;
   @apply sm:flex sm:flex-col;
   @apply 2xl:flex 2xl:flex-row 2xl:justify-around;
 }

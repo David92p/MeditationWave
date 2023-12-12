@@ -79,9 +79,9 @@ const Navbar: React.FC = () => {
 				)}
 				<button onClick={() => navigate("start")} className="w-24 sm:w-28 h-8 sm:h-10 text-sm sm:text-lg bg-amber-900 hover:bg-amber-800 rounded-2xl text-white font-medium tracking-widest transition duration-300 ease-in-out shadow-xl mr-3 2xl:mr-7 2xl:mb-4">START</button>
 			</div>
-			<div id="container-link" className="flex flex-col 2xl:flex-row items-center 2xl:justify-around py-4 gap-4 w-[100%] h-[100%] absolute 2xl:static top-[-200px] bg-amber-800 bg-opacity-90 2xl:bg-transparent">
+			<div id="container-link" className="flex flex-col 2xl:flex-row items-center 2xl:justify-around py-4 gap-4 w-[100%] h-[100%] absolute 2xl:static top-[-200px] bg-amber-700 bg-opacity-90 2xl:bg-transparent">
 				<NavLink to="/" className="font-bold text-2xl tracking-widest text-slate-100">Home</NavLink>
-				<NavLink to="start" className="font-bold text-2xl tracking-widest text-slate-100">About</NavLink>
+				<NavLink to="about" className="font-bold text-2xl tracking-widest text-slate-100">About</NavLink>
 				<NavLink to="contact" className="font-bold text-2xl tracking-widest text-slate-100">Contact</NavLink>
 			</div>
 		</div>

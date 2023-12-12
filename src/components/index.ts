@@ -1,6 +1,7 @@
 import Home from "./home/Home";
-import Start from "./start/Start";
+import About from "./about/About";
 import Contact from "./contact/Contact";
 import ErrorServer from "./errorServer/ErrorServer";
+import Start from "./start/Start";
 
-export { Home, Start, Contact, ErrorServer }
+export { Home, About, Contact, ErrorServer, Start }

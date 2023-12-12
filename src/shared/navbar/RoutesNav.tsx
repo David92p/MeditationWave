@@ -1,5 +1,5 @@
 import { useRoutes } from "react-router-dom";
-import { Home, Start, Contact, ErrorServer } from "../../components"
+import { Home, About, Contact, ErrorServer, Start } from "../../components"
 
 const RoutesNav:React.FC = () => {
   return useRoutes([
@@ -8,8 +8,12 @@ const RoutesNav:React.FC = () => {
         element: <Home />
     }, 
     {
-        path: "/start",
-        element: <Start/>
+        path: "/about",
+        element: <About/>
+    },
+    {
+      path: "/start",
+      element: <Start/>
     },
     {
         path: "/contact",

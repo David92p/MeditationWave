@@ -26,7 +26,7 @@ interface initialState {
 
 const initialState:initialState = {
     language: "ENG",
-    darkMode: true,
+    darkMode: false,
     home: EngHome
 };
 

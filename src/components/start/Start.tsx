@@ -2,7 +2,7 @@
 const Start:React.FC = () => {
   return (
     <div>
-      <h1>START COMPONENT ....</h1>
+      STart COMPONENT ....
     </div>
   )
 }

@@ -1,12 +1,16 @@
 import { BrowserRouter } from "react-router-dom";
 import { Navbar, RoutesNav } from "./shared";
+import { Footer } from "./components";
 
 function App() {
   return (
-    <BrowserRouter>
+    <>
+      <BrowserRouter>
 			<Navbar/>
 			<RoutesNav/>
-    </BrowserRouter>
+      </BrowserRouter>
+      <Footer></Footer>
+    </>
   )
 }
 

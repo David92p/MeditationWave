@@ -1,8 +1,8 @@
 import React from 'react';
-import cuoricino from "../../assets/cuoricino.png"
-import linkedin from "../../assets/linkedin.png"
-import github from "../../assets/git-hub.png"
-import instagram from "../../assets/instagram.png"
+import cuoricino from "../../assets/images/cuoricino.png"
+import linkedin from "../../assets/images/linkedin.png"
+import github from "../../assets/images/git-hub.png"
+import instagram from "../../assets/images/instagram.png"
 import { useStoreSelector } from '../../shared/store/hooks';
 
 const Footer: React.FC = () => {

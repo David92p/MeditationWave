@@ -1,7 +1,7 @@
-import about1 from "../../assets/about1.jpg"
-import about2 from "../../assets/about2.jpg"
-import about3 from "../../assets/about3.jpg"
-import about4 from "../../assets/about4.jpg"
+import about1 from "../../assets/images/about1.jpg"
+import about2 from "../../assets/images/about2.jpg"
+import about3 from "../../assets/images/about3.jpg"
+import about4 from "../../assets/images/about4.jpg"
 import { useStoreSelector } from "../../shared/store/hooks";
 import { motion } from "framer-motion"
 

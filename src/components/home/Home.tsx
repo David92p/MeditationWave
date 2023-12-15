@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom"
-import icon1 from "../../assets/icon1.png"
-import icon2 from "../../assets/icon2.png"
+import icon1 from "../../assets/images/icon1.png"
+import icon2 from "../../assets/images/icon2.png"
 import { useStoreSelector } from "../../shared/store/hooks"
 import { motion } from "framer-motion"
 const Home:React.FC = () => {

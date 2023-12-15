@@ -1,7 +1,7 @@
 import { useState } from "react";
-import imgNavbar from "../../assets/header.jpg"
-import it from "../../assets/it.png"
-import en from "../../assets/en.png"
+import imgNavbar from "../../assets/images/header.jpg"
+import it from "../../assets/images/it.png"
+import en from "../../assets/images/en.png"
 import { GiHamburgerMenu } from "react-icons/gi";
 import{ AiOutlineClose } from "react-icons/ai";
 import { MdDarkMode, MdSunny  } from "react-icons/md";

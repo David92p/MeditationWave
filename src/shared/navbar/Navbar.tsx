@@ -2,12 +2,12 @@ import { useState } from "react";
 import imgNavbar from "../../assets/images/header.jpg"
 import it from "../../assets/images/it.png"
 import en from "../../assets/images/en.png"
-import { GiHamburgerMenu } from "react-icons/gi";
-import{ AiOutlineClose } from "react-icons/ai";
-import { MdDarkMode, MdSunny  } from "react-icons/md";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faBars, faMoon, faSun, faXmark } from "@fortawesome/free-solid-svg-icons";
 import { NavLink, useNavigate } from "react-router-dom";
-import { useStoreSelector, useStoreDispatch } from "../store/hooks"
-import globalSlice from "../../data/appSlice"
+import { useStoreSelector, useStoreDispatch } from "../../store/hooks"
+import globalSlice from "../../context/appSlice"
+
 
 const Navbar: React.FC = () => {
   const navigate = useNavigate()
@@ -58,23 +58,25 @@ const Navbar: React.FC = () => {
               className="sr-only peer"
             />
             <span className="flex justify-center items-center w-2/5 h-4/5 bg-white absolute rounded-full left-1 top-1 cursor-pointer peer-checked:bg-white peer-checked:left-8 transition-all duration-500">
-              {darkMode ? <MdDarkMode/> : <MdSunny />}
+              {darkMode ? <FontAwesomeIcon icon={faMoon} /> : <FontAwesomeIcon icon={faSun} />}
             </span>
           </label>
         </div>
         <div className="flex flex-col 2xl:flex-col-reverse h-2/3 w-[100%] 2xl:w-[50%]">
 			<div className="w-[100%] flex justify-between 2xl:justify-center relative top-14 2xl:static py-2">
 				{menu ? (
-					<AiOutlineClose
-					className="2xl:hidden cursor-pointer ml-3 h-8 sm:h-10 text-4xl"
-					color="rgb(30 41 59)"
-					onClick={() => onMenu()}
-					/>
+          <FontAwesomeIcon 
+            icon={faXmark} 
+            className="2xl:hidden cursor-pointer ml-3 h-8 sm:h-10 text-4xl"
+            color="rgb(30 41 59)" 
+            onClick={() => onMenu()}
+          />
 				) : (
-					<GiHamburgerMenu
-					className="2xl:hidden cursor-pointer ml-3 h-8 sm:h-10 text-4xl"
-					color="rgb(30 41 59)"
-					onClick={() => onMenu()}
+          <FontAwesomeIcon 
+            icon={faBars} 
+            className="2xl:hidden cursor-pointer ml-3 h-8 sm:h-10 text-4xl"
+            color="rgb(30 41 59)"
+            onClick={() => onMenu()}
 					/>
 				)}
 				<button onClick={() => navigate("start")} className="w-24 sm:w-28 h-8 sm:h-10 text-sm sm:text-lg bg-amber-800 hover:bg-amber-900 rounded-2xl text-white font-medium tracking-widest transition duration-300 ease-in-out shadow-xl mr-3 2xl:mr-7 2xl:mb-4">START</button>

@@ -3,7 +3,7 @@ import cuoricino from "../../assets/images/cuoricino.png"
 import linkedin from "../../assets/images/linkedin.png"
 import github from "../../assets/images/git-hub.png"
 import instagram from "../../assets/images/instagram.png"
-import { useStoreSelector } from '../../shared/store/hooks';
+import { useStoreSelector } from '../../store/hooks';
 
 const Footer: React.FC = () => {
 

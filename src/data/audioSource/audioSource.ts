@@ -7,10 +7,16 @@ import wind from "../../assets/sounds/wind.mp3"
 import chords from "../../assets/sounds/chords.mp3"
 import space from "../../assets/sounds/space.mp3"
 
-import { faCloudRain, faFire, faWater, faDove, faGuitar, faMusic, faWind } from "@fortawesome/free-solid-svg-icons"
+import { faCloudRain, faFire, faWater, faDove, faGuitar, faMusic, faWind, IconDefinition } from "@fortawesome/free-solid-svg-icons"
 import { faSkyatlas } from "@fortawesome/free-brands-svg-icons"
 
-const audioSource = [
+type Audio = {
+    id: number;
+    icon: IconDefinition;
+    source: string;
+}
+
+const audioSource:Audio[] = [
     {
         id: 1,
         icon: faCloudRain, 
@@ -54,3 +60,4 @@ const audioSource = [
 ]
 
 export  { audioSource }
+export type { Audio }

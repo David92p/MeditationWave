@@ -14,48 +14,57 @@ type Audio = {
     id: number;
     icon: IconDefinition;
     source: string;
+    active: boolean
 }
 
 const audioSource:Audio[] = [
     {
         id: 1,
         icon: faCloudRain, 
-        source: rain
+        source: rain, 
+        active: false
     },
     {
         id: 2,
         icon: faFire, 
-        source: fire
+        source: fire,
+        active: false
     },
     {
         id: 3,
         icon: faWater, 
-        source: beach
+        source: beach,
+        active: false
     },
     {
         id: 4,
         icon: faDove, 
-        source: bird
+        source: bird,
+        active: false
     },
     {
         id: 5,
         icon: faGuitar, 
-        source: violin
+        source: violin,
+        active: false
     },
     {
         id: 6,
         icon: faWind, 
-        source: wind
+        source: wind,
+        active: false
     },
     {
         id: 7,
         icon: faMusic, 
-        source: chords
+        source: chords,
+        active: false
     },
     {
         id: 8,
         icon: faSkyatlas, 
-        source: space
+        source: space,
+        active: false
     }
 ]
 

@@ -14,7 +14,7 @@ const PlayPauseStop:React.FC<PlayPauseStopType> = ({ playPauseStopController, pl
         <FontAwesomeIcon icon={faStop} />
       </button>
       <button className="text-white items-center py-1 sm:py-2 text-3xl sm:text-4xl md:text-5xl bg-amber-800 w-24 sm:w-36 rounded-2xl">
-        {playPause ? <FontAwesomeIcon icon={faPause} /> : <FontAwesomeIcon icon={faPlay} onClick={() => playPauseStopController("play")} />}
+        {playPause ? <FontAwesomeIcon icon={faPause} onClick={() => playPauseStopController("pause")}/> : <FontAwesomeIcon icon={faPlay} onClick={() => playPauseStopController("play")}/>}
       </button>
     </>
   )

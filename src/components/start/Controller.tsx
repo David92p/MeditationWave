@@ -93,7 +93,6 @@ const Controller:React.FC = () => {
 					setControls((prevControls:Controls) => ({...prevControls, playPause: true}))
 					setShowAlert(false)
 					audioRef.current.play()
-					audioRef.current.loop
 				}
 				break
 			case "pause": 
@@ -127,7 +126,7 @@ const Controller:React.FC = () => {
 	return (
 		<div className= {`${state.darkMode ? "bg-stone-800 text-white" : "bg-amber-200 text-slate-900"} w-full flex flex-col`}>
 			<div className="flex flex-col items-center gap-4 sm:gap-8">
-				<audio src={controls.start.tracks.onPlay} ref={audioRef} />
+				<audio src={controls.start.tracks.onPlay} ref={audioRef} loop/>
 				{ controls.settings ? <Settings timer={controls.timer} timerSetting={timerSetting} buttonsSetting={buttonsSetting}/> : <Timer timer={controls.timer} /> }
 				{ showAlert && <h1 ref={alertTimer} className={`text-2xl 2xl:text-4xl text-center font-extrabold tracking-wider px-5 py-1 rounded-lg ${state.darkMode ? "bg-amber-200 text-red-500" : "bg-stone-100 text-red-500 border-4 border-red-500"} transition-all`}>{ controls.alert }</h1> }
 				<div className='flex justify-center gap-8'>

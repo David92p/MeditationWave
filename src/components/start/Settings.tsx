@@ -43,7 +43,7 @@ const Settings:React.FC<SettingsProps> = ({ timerSetting, buttonsSetting, timer 
         trackClassName={"track"}
         value={timer.seconds}
         onChange={(value) => timerSetting(value, "seconds")}
-        min={1}
+        min={0}
         max={59}
       >
       </ReactSlider>

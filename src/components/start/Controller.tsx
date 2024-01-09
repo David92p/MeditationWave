@@ -1,5 +1,5 @@
 
-import { useRef, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { BtnSetting, PlayPauseStop, Settings, Timer } from '..'
 import { useStoreSelector } from '../../store/hooks'
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
@@ -18,7 +18,7 @@ export type Controls = {
 	}
 	playPause: boolean
 	settings: boolean
-	timer: {hours: number, minutes: number, seconds: number} 
+	timer: {hours: number, minutes: number, seconds: number, circle: number,  decrementCircle: number} 
 	alert: string
   }
 
@@ -27,8 +27,7 @@ const Controller:React.FC = () => {
 	const alertTimer = useRef<HTMLHeadingElement>(null!)
 	const audioRef = useRef<HTMLAudioElement>(null!)
 
-	//const [audioTracks, setAudioTracks] = useState<Audio[]>(audioSource)
-	const [controls, setControls] = useState<Controls>({ start: {timer: false, tracks: {onPlay: "", sourceAudio: audioSource}}, playPause: false, settings: false, timer: {hours: 0, minutes: 0, seconds: 0}, alert: "Frase di default"})
+	const [controls, setControls] = useState<Controls>({ start: {timer: false, tracks: {onPlay: "", sourceAudio: audioSource}}, playPause: false, settings: false, timer: {hours: 0, minutes: 0, seconds: 0, circle: 100, decrementCircle: 0} , alert: "Frase di default"})
 	const [showAlert, setShowAlert] = useState<boolean>(false)
 
 
@@ -58,7 +57,7 @@ const Controller:React.FC = () => {
 				return { ...prevControls, settings: !prevControls.settings, start: {...prevControls.start, timer: true} }
 			}
 			else if (typeButton == "back_reset"){
-				return { ...prevControls, settings: !prevControls.settings, start: {...start, timer: false}, timer: {hours: 0, minutes: 0, seconds: 0} }
+				return { ...prevControls, settings: !prevControls.settings, start: {...start, timer: false}, timer: {hours: 0, minutes: 0, seconds: 0, circle: 100, decrementCircle: 0} }
 			}
 			else {
 				return prevControls
@@ -71,7 +70,7 @@ const Controller:React.FC = () => {
 		switch (typeButton) {
 			case "stop":
 				setControls((prevControls:Controls) => {
-					return { ...prevControls, timer: {hours: 0, minutes: 0, seconds: 0}, start: {timer: false, tracks: {onPlay: "", sourceAudio: audioSource}}, playPause: false} 
+					return { ...prevControls, timer: {hours: 0, minutes: 0, seconds: 0, circle: 100, decrementCircle: 0}, start: {timer: false, tracks: {onPlay: "", sourceAudio: audioSource}}, playPause: false} 
 				})
 				setShowAlert(false)
 				break
@@ -83,7 +82,6 @@ const Controller:React.FC = () => {
 					setShowAlert(true)
 				}
 				else if (!controls.start.tracks.onPlay){
-					console.log("entrato nel audio")
 					state.language == "ENG" 
 					? setControls((prevControls:Controls) => ({...prevControls, alert: "Set a sound to play"}))
 					: setControls((prevControls:Controls) => ({...prevControls, alert: "Imposta un brano da riprodurre"}))
@@ -122,12 +120,17 @@ const Controller:React.FC = () => {
 		})
 	}
 
-	//console.log(audioTracks)
+	useEffect(() => {
+		setControls((prevControls:Controls) => {
+			return { ...prevControls, timer: { ...prevControls.timer, decrementCircle: 100 / (((prevControls.timer.hours * 60) * 60) + (60 * prevControls.timer.minutes) + prevControls.timer.seconds) } }
+		})
+	}, [controls.start.timer])
+
 	return (
 		<div className= {`${state.darkMode ? "bg-stone-800 text-white" : "bg-amber-200 text-slate-900"} w-full flex flex-col`}>
 			<div className="flex flex-col items-center gap-4 sm:gap-8">
 				<audio src={controls.start.tracks.onPlay} ref={audioRef} loop/>
-				{ controls.settings ? <Settings timer={controls.timer} timerSetting={timerSetting} buttonsSetting={buttonsSetting}/> : <Timer timer={controls.timer} /> }
+				{ controls.settings ? <Settings timer={controls.timer} timerSetting={timerSetting} buttonsSetting={buttonsSetting}/> : <Timer start={controls.playPause} timer={controls.timer} setControls={setControls} /> }
 				{ showAlert && <h1 ref={alertTimer} className={`text-2xl 2xl:text-4xl text-center font-extrabold tracking-wider px-5 py-1 rounded-lg ${state.darkMode ? "bg-amber-200 text-red-500" : "bg-stone-100 text-red-500 border-4 border-red-500"} transition-all`}>{ controls.alert }</h1> }
 				<div className='flex justify-center gap-8'>
 					{ controls.settings || <PlayPauseStop playPauseStopController = {playPauseStopController} playPause={controls.playPause} /> }

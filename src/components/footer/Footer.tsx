@@ -1,5 +1,4 @@
 import React from 'react';
-import cuoricino from "../../assets/images/cuoricino.png"
 import linkedin from "../../assets/images/linkedin.png"
 import github from "../../assets/images/git-hub.png"
 import instagram from "../../assets/images/instagram.png"
@@ -26,10 +25,7 @@ const Footer: React.FC = () => {
           </a>
         </div>
         <div className="flex justify-center items-center mx-2 sm:mx-0">
-          <p className="text-center font-bold text-sm tracking-wider">
-            Designed and built with all the love in the world
-          </p>
-          <img src={cuoricino} alt="Passion for coding" className="w-10 h-10" />
+          © 2024 | David Panetta
         </div>
       </div>
     );

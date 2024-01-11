@@ -9,7 +9,7 @@ const Footer: React.FC = () => {
     const state = useStoreSelector((state) => state.globalReducer);
 
     return (
-      <div className={`flex flex-col h-28 ${state.darkMode ? "bg-amber-700 text-white" : "bg-amber-500 text-slate-900"}`}>
+      <div className={`flex flex-col h-28 ${state.darkMode ? "bg-amber-800 text-white" : "bg-amber-700 text-slate-900"}`}>
         <div className="flex justify-center gap-8 my-auto">
           <a
             href="https://it.linkedin.com/in/davide-panetta-065420207"

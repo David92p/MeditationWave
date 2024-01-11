@@ -1,6 +1,6 @@
 <br />
 <div align="center">
-     <img src="src/assets/images/logo.png" alt="Logo" width="300" height="200">
+     <img src="src/assets/images/logo.png" alt="Logo" width="300" height="300">
 
 <h2 align="center">Meditation Wave</h2>
 <br/>
@@ -61,7 +61,7 @@
     <li>
       <h4>Home</h4>
       <div align="center">
-        <img src="/dist/assets/home.png" alt="home" align="center" width="600" heigth="300">
+        <img src="src/assets/images/home.png" alt="home" align="center" width="600" heigth="300">
       </div>
       <br />
       <ul>
@@ -73,7 +73,7 @@
     <li>
       <h4>About</h4>
       <div align="center">
-        <img src="/dist/assets/questionnaire.png" alt="questionnaire" width="600" heigth="300">
+        <img src="src/assets/images/about.png" alt="questionnaire" width="600" heigth="300">
       </div>
       <br />
       <ul>
@@ -84,7 +84,7 @@
     <li>
       <h4>Contact</h4>
       <div align="center">
-        <img src="/dist/assets/results.png" alt="results" width="600" heigth="300">
+        <img src="src/assets/images/contact.png" alt="results" width="600" heigth="300">
       </div>
       <br />
       <ul>
@@ -93,6 +93,22 @@
       </ul>
     </li>
     <br />
+     <li>
+      <h4>Start</h4>
+      <div align="center">
+        <img src="src/assets/images/start.png" alt="results" width="600" heigth="300">
+      </div>
+      <br />
+      <ul>
+        <li>This is the main point of our application, from here your meditation journey begins.</li>
+        <li>Start by going to settings and setting a meditation time.
+          We recommend starting with a few minutes to properly maintain a good state of concentration.</li>
+          <li>Set a sound that allows you to relax your mind and body.
+          Remember, the sound you set is completely subjective, so choose the one that strikes your spirituality.</li>
+          <li>Press Play and enjoy inner peace.</li>
+          <li>Remember to contact me if you don't find a melody that allows you to reach your inner peace. I will be happy to implement this for you.</li>
+      </ul>
+    </li>
   </ul>
   
   ## Technical Choices

@@ -1,6 +1,6 @@
 <br />
 <div align="center">
-     <img src="./dist/assets/logo-f7b9f254.jpg" alt="Logo" width="300" height="200">
+     <img src="src/assets/images/logo.png" alt="Logo" width="300" height="200">
 
 <h2 align="center">Meditation Wave</h2>
 <br/>

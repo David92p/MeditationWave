@@ -1,20 +1,23 @@
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
 import { EngAbout, EngHome, ItaAbout, ItaHome } from "../data";
+import { EngContact, ItaContact } from "../data/context/context";
 
 type Language = "ENG" | "ITA"
 
-interface initialState {
+export interface initialState {
     language: Language
     darkMode: boolean
     home: typeof ItaHome | typeof EngHome
     about: typeof ItaAbout | typeof EngAbout
+    contact: typeof ItaContact | typeof EngContact
 }
 
-const initialState:initialState = {
+ const initialState:initialState = {
     language: "ENG",
     darkMode: true,
     home: EngHome,
-    about: EngAbout
+    about: EngAbout,
+    contact: EngContact
 };
 
 const globalSlice = createSlice({
@@ -27,10 +30,12 @@ const globalSlice = createSlice({
                 case "ENG":
                     state.home = EngHome
                     state.about = EngAbout
+                    state.contact = EngContact
                     break
                 case "ITA":
                     state.home = ItaHome
                     state.about = ItaAbout
+                    state.contact = ItaContact
                     break
             }
         },

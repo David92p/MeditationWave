@@ -40,4 +40,34 @@ const  ItaAbout = {
     par4: `Noi abbiamo bisogno di armonia, ne abbiamo bisogno come di una medicina. Quindi dobbiamo imparare a crearcela. Cerca un luogo tuo, dove ti senti bene. Crealo in casa, in un angolo tutto per te, oppure se ami passeggiare scegli un bosco, un fiume, un posto dove tu possa liberarti di tutte le sovrastrutture e passare un po’ di tempo in pace e armonia. Prepara un tè, circondati di elementi che possano creare benessere e cerca di passare almeno dieci minuti al giorno liberando la mente da tutto quello che ti è capitato. Fallo soltanto per te stesso, è una cura obbligatoria.`
 };
 
-export { EngHome, ItaHome, EngAbout, ItaAbout }
+const EngContact = {
+    imgContent: `
+        Do you have questions about the project or do you want to propose
+        a collaboration? Contact me by filling out the form and I will
+        reply as soon as possible. Warm greetings from Meditation Wave!
+    `,
+    firstname: "First Name",
+    lastname: "Last Name", 
+    email: "Email",
+    message: "Enter your messagge ...", 
+    btn: "Send", 
+    success: "Sent successfully",
+    error: "Error: Please try again"
+}
+
+const ItaContact = {
+    imgContent: `
+        Hai domande sul progetto o vuoi propormi
+        una collaborazione? Contattami compilando il modulo, ti risponderò il prima possibile. 
+        Cordiali saluti da Meditation Wave!
+    `,
+    firstname: "Nome",
+    lastname: "Cognome", 
+    email: "Email",
+    message: "Inserisci il tuo messaggio ...", 
+    btn: "Invio", 
+    success: "Messaggio inviato!",
+    error: "Errore: Si prega di riprovare"
+}
+
+export { EngHome, ItaHome, EngAbout, ItaAbout, EngContact, ItaContact }

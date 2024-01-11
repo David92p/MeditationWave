@@ -1,20 +1,31 @@
 import { faPause, faPlay, faStop } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
+import { Controls } from ".."
+import { initialState } from "../../context/appSlice"
+import { useStoreSelector } from "../../store/hooks"
+
+type ToggleAlert = (value: React.SetStateAction<boolean>) => void
+type ControlsSettings = React.Dispatch<React.SetStateAction<Controls>>
 
 type PlayPauseStopType = {
-	playPauseStopController: (typeButton: "play" | "pause" | "stop") => void
+  toggleAlert: ToggleAlert
+  controls: Controls
+  controlsSettings:ControlsSettings
+  audioRef: React.MutableRefObject<HTMLAudioElement>
+	playPauseStopController: (typeButton: "play" | "pause" | "stop", state:initialState, toggleAlert:ToggleAlert, controls:Controls, controlsSettings:ControlsSettings, audioRef: React.MutableRefObject<HTMLAudioElement>) => void
   playPause: boolean
 }
 
 
-const PlayPauseStop:React.FC<PlayPauseStopType> = ({ playPauseStopController, playPause }) => {
+const PlayPauseStop:React.FC<PlayPauseStopType> = ({ toggleAlert, controls, controlsSettings, audioRef, playPauseStopController, playPause }) => {
+  const state = useStoreSelector((state) => state.globalReducer)
   return (
     <>
-      <button onClick={() => playPauseStopController("stop")} className="text-white items-center py-1 sm:py-2 text-3xl sm:text-4xl md:text-5xl bg-amber-800 w-24 sm:w-36 rounded-2xl">
+      <button onClick={() => playPauseStopController("stop", state, toggleAlert, controls, controlsSettings, audioRef)} className="text-white items-center py-1 sm:py-2 text-3xl sm:text-4xl md:text-5xl bg-amber-800 w-24 sm:w-36 rounded-2xl">
         <FontAwesomeIcon icon={faStop} />
       </button>
       <button className="text-white items-center py-1 sm:py-2 text-3xl sm:text-4xl md:text-5xl bg-amber-800 w-24 sm:w-36 rounded-2xl">
-        {playPause ? <FontAwesomeIcon icon={faPause} onClick={() => playPauseStopController("pause")}/> : <FontAwesomeIcon icon={faPlay} onClick={() => playPauseStopController("play")}/>}
+        {playPause ? <FontAwesomeIcon icon={faPause} onClick={() => playPauseStopController("pause", state, toggleAlert, controls, controlsSettings, audioRef)}/> : <FontAwesomeIcon icon={faPlay} onClick={() => playPauseStopController("play", state, toggleAlert, controls, controlsSettings, audioRef)}/>}
       </button>
     </>
   )

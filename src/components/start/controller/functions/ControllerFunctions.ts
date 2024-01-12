@@ -95,15 +95,14 @@ export const playPauseStopController = (typeButton: "play" | "pause" | "stop", s
 export const audioSelector = (onPlay: string, id:number, toggleAlert:ToggleAlert, controlsSettings:ControlsSettings) => {
 	toggleAlert(false)
 	controlsSettings((prevControls:Controls):Controls => {
-		return (
-			{
-				...prevControls,
-				playPause: false,
-				start: {
-					...prevControls.start,
-					tracks: {onPlay, sourceAudio: prevControls.start.tracks.sourceAudio.map((audio:Audio) => audio.id == id ? {...audio, active: true} : {...audio, active: false}) }
-				}
+		return prevControls.start.tracks.onPlay != onPlay ? {
+			...prevControls,
+			playPause: false,
+			start: {
+				...prevControls.start,
+				tracks: { onPlay, sourceAudio: prevControls.start.tracks.sourceAudio.map((audio: Audio) => audio.id == id ? { ...audio, active: true } : { ...audio, active: false }) }
 			}
-		)
+		} : { ...prevControls }
+
 	})
 }

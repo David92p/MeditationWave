@@ -21,7 +21,7 @@ const Contact: React.FC = () => {
     const DATA = {
       service_id: "service_4yfil2v",
       template_id: "template_7x1epr8",
-      user_id: "user_aAZ62ZPpNggBZ4XZpXG6P",
+      user_id: "z96csXSCZK5wNKmbc",
       template_params: {
         user_name,
         user_surname,
